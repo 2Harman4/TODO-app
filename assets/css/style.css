@@ -1,0 +1,18 @@
+html{
+    font-size: 20px;
+}
+
+body{
+    margin: 0;
+}
+
+#jumbotron{
+
+    width: 100vw;
+    height: 80vh;
+    position: fixed;
+    top: 5vh;
+
+    background-color: aquamarine;
+
+}

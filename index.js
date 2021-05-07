@@ -2,7 +2,10 @@ const express = require('express');
 const app = express();
 const port = 8000;
 
-//setting the tempate engine
+//static files
+app.use(express.static('./assets'));
+
+//setting the template engine
 app.set({
     'view engine':'ejs',
     'views':'./views'
@@ -11,6 +14,8 @@ app.set({
 //the main router
 app.use('/',require('./routes/index'));
 
+
+//checking if server is on or not
 app.listen(port,function(err){
     
     if(err){
