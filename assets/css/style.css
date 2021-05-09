@@ -1,18 +1,122 @@
-html{
-    font-size: 20px;
+/* defining variables */
+:root{
+
+    --jumbotron-backgound: aquamarine;
+    --page-heading-font-size: 7vw;
+    --page-heading-font-size-final: 3vw;
+    --page-heading-initial-spacing: 6vw;
+    --page-heading-letter-spacing:2vw;
+    --page-heading-letter-spacing-final: 1vw;
+
+    --section-background: rgb(202, 158, 62);
+    --section-inital-position : 100%;
+    --section-final-position: 10%;
+
+
 }
+
 
 body{
     margin: 0;
+    width: 100vw;
+    max-width:100%;
+    height: 100vh;
+
+    overflow: hidden;
 }
 
+/* --------------------------BASIC LAYOUT------------------------------------- */
+
+/* JUMBOTRON CONTAINS THE WEB APP HEADING */
 #jumbotron{
 
-    width: 100vw;
-    height: 80vh;
+    width: 100%;
+    height: 75%;
     position: fixed;
-    top: 5vh;
+    top: 5%;
+    background-color: var(--jumbotron-backgound);
 
-    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+
+/* ALL THE FUNCTIONAL ASPECTS ARE IN SECTION */
+section{
+    
+    width: 50%;
+    height: 85%;
+    background-color: var(--section-background);
+    position: relative;
+    top: var(--section-final-position);
+
+    display:none;
+    left: 10%;
+    border: .6vw solid white;
+    border-radius: 5%;
+    
+}
+
+/* STYLING THE PAGE-HEADING */
+#page-heading{
+
+    font-size: var(--page-heading-font-size);
+    font-weight: 100;    
+    letter-spacing: var(--page-heading-letter-spacing);
+    position: relative;
+    display: none;
+}
+
+/* -----------ANIMATIONS------------------------------------------------------- */
+
+/* --------------FIRST COMES THE HEADING-------------- */
+.animate-heading{
+    animation: heading-animator 2s ease-in-out;
+}
+
+@keyframes heading-animator{
+    from{
+        letter-spacing: var(--page-heading-initial-spacing);
+        filter: opacity(0);
+    }
+    to{
+        letter-spacing: var(--page-heading-letter-spacing);
+        filter: opacity(1);
+    }
+}
+
+/* ------------------ANIMATING THE SECTION ---------------------------------------------- */
+
+.animate-section{
+    animation: section-animator 1.5s ease-in-out;
+}
+
+@keyframes section-animator{
+    from{
+        top: var(--section-inital-position);
+    }
+    
+    to{
+        top: var(--section-final-position);
+    }
+}
+
+/* -------------------AS THE SECTION ROLLS UP ,HEADING ANIMTES TO SHIFT AND SHRINK--------- */
+.animate-scale-and-shift{
+    animation: heading-shift-animator 1.5s ease-in-out;
+}
+
+@keyframes heading-shift-animator{
+    from{
+        font-size: var(--page-heading-font-size);
+        letter-spacing: var(--page-heading-letter-spacing);
+        left: 0;
+    }
+    
+    to{
+        font-size: var(--page-heading-font-size-final);
+        letter-spacing: var(--page-heading-letter-spacing-final);
+        left: 30vw;
+    }
 }
