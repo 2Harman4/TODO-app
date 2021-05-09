@@ -9,6 +9,9 @@
     </title>
     <!-- linking my css -->
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- adding font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 <body>
    
@@ -18,8 +21,76 @@
     </div>
 
     <!-- section contains all the functionalities -->
-    <section>
-        
+    <section id="content">
+
+        <!-- input form is supposed to be flex -->
+        <form action="/create-task">
+
+            <div id="description-container">
+                <h2>Description</h2>
+                <input id="textbox" type="textbox" name="description" placeholder="What do you need to do?">
+            </div>
+
+            <!-- ROW 2 -->
+            <div id="row-2">
+                <div id="category-container">
+                    <h2>Category</h2>
+                    <select name="category" id="category-selector" >
+                        <option value="">Choose a category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+    
+                <div id="date-container">
+                    <h2>Due Date</h2>
+                    <input type="date" name="date">
+                </div>
+            </div>
+
+            <!-- ROW 3 -->
+            <div id="row-3">
+                <button type="submit" id="add-task-button">
+                    <h2>
+                        <i class="fas fa-plus"></i>
+                        ADD TASK
+                    </h2>
+                </button>
+            </div>
+        </form>
+
+        <!-- this part holds the output -->
+        <div id="tasks-container">
+
+            <!-- adding the tasks list -->
+            <ul>
+                    <!-- this button stays on top right corner of the task date-container
+                    used to expand and contract container size -->
+                    <i class="fas fa-expand-alt" id="expand-button"></i>
+                    
+                    <li class="task">
+                        <input type="checkbox">
+
+                        <div class="task-details">
+                            <h2 class="description">
+
+                            </h2>
+                            <p class="date">
+
+                            </p>
+                        </div>
+
+                        <div class="category">
+                            <h2></h2>
+                        </div>
+                    </li>
+                
+            </ul>
+
+        </div>
     </section>
 
 
