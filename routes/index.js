@@ -15,7 +15,7 @@ router.get('/home_no_anim',homeNoAnimation.home);
 
 //controller for create contact route is createContoller
 const createTask = require('../controllers/create_task_controller');
-router.get('/create-task',createTask.add);
+router.post('/create-task',createTask.add);
 
 
 //exporting- to be used as a middleware

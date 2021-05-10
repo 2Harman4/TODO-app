@@ -1,8 +1,23 @@
-module.exports.add = function(req,res){
-    // return res.render('home.ejs',{
-    //     title : 'TODO List: Contact Created'
-    // });
+//linking the model
+const Task  = require('../models/tasks');
 
-    console.log('contact created!!!!!!!!');
+//function
+module.exports.add = function(req,res){
+
+    let formData = req.body;
+    console.log('Form data recieved by server:',formData);
+
+    //Populating the database
+    Task.create(formData,function(err,newTask){
+        if(err){
+            console.log('Error in creating the task!!');
+            return;
+        }
+
+        //Task created
+        console.log('****Task Created: ', newTask);
+    })
+
+
     return res.redirect('/home_no_anim');
 }

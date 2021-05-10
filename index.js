@@ -5,6 +5,12 @@ const port = 8000;
 //static files
 app.use(express.static('./assets'));
 
+//adding a middleware parser
+app.use(express.urlencoded());
+
+//linking database
+const db= require('./config/mongoose');
+
 //setting the template engine
 app.set({
     'view engine':'ejs',
