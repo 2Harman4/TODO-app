@@ -71,17 +71,18 @@
 
         <!-- this part holds the output -->
         <div id="tasks-container">
+     
+            <!-- this button stays on top right corner of the task date-container
+            used to expand and contract container size -->
+            <i class="fas fa-expand-alt" id="expand-button"></i>
 
             <!-- adding the tasks list -->
             <ul>
-                    <!-- this button stays on top right corner of the task date-container
-                    used to expand and contract container size -->
-                    <i class="fas fa-expand-alt" id="expand-button"></i>
                     
                     <% for(let i of tasksArray){ %>
-                    <li class="task" id="<%=i._id%>">
+                    <li class="task" >
 
-                        <input type="checkbox">
+                        <input type="checkbox" class="checkbox" unique_id="<%=i._id%>">
 
                         <div class="task-details">
                             <h2 class="description">
@@ -101,8 +102,11 @@
                         </div>
                     </li>
                     <% } %>
-                
             </ul>
+
+            <!-- this button stays on bottom right corner of the task date-container
+            used to DELETE tasks -->
+            <i class="fas fa-trash" id="delete-button"></i>
 
         </div>
     </section>
@@ -115,6 +119,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <!-- my script -->
 <script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/common_script.js"></script>
 <!-- ---------------------------------------------------------------------------------------------------------------------- -->
 </body>
 </html>

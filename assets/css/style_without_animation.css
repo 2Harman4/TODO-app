@@ -207,16 +207,28 @@ form{
 
 }
 
-  /* *******COPY FROM HERE******* */
+  
   #expand-button{
     position: absolute;
-    right: 0%;
+    right: 1%;
     top: -2%;
     font-size: 1.2rem;
     transition: all ease-in-out .1s;
 }
 
 #expand-button:hover{
+    font-size: 1.7rem;
+}
+
+#delete-button{
+    position: absolute;
+    right: 1%;
+    bottom: 0%;
+    font-size: 1.2rem;
+    transition: all ease-in-out .1s;
+}
+
+#delete-button:hover{
     font-size: 1.7rem;
 }
 

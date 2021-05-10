@@ -13,9 +13,13 @@ router.get('/',homeController.home);
 const homeNoAnimation = require('../controllers/home_without_animation');
 router.get('/home_no_anim',homeNoAnimation.home);
 
-//controller for create contact route is createContoller
+//controller for create task route is createContoller
 const createTask = require('../controllers/create_task_controller');
 router.post('/create-task',createTask.add);
+
+//controller for delete task route is deleteTask
+const deleteTasks = require('../controllers/delete_task_controller');
+router.post('/delete-tasks',deleteTasks.delete);
 
 
 //exporting- to be used as a middleware
