@@ -3,6 +3,22 @@ $(document).ready(function(){
     let deleteButton = $('#delete-button');
     let checkboxses = $('.checkbox');
     let selectedArray=[];
+    
+    // ---------handling category colors----------
+        let personalTasks =$("[data-category='Personal']");
+        let workTasks =$("[data-category='Work']");
+        let schoolTasks =$("[data-category='School']");
+        let cleaningTasks =$("[data-category='Cleaning']");
+        let otherTasks =$("[data-category='Other']");
+
+        
+        personalTasks.css('background-color','#F0E751');
+        workTasks.css('background-color','#ED4224');
+        schoolTasks.css('background-color','#E136F0');
+        cleaningTasks.css('background-color','#454CF0');
+        otherTasks.css('background-color','#41F064');
+
+
 
     //handling checkboxses for delete functionality
     checkboxses.on('click',function(){
