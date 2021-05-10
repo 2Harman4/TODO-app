@@ -65,8 +65,8 @@ section{
     background-color: var(--section-background);
     position: relative;
     top: var(--section-final-position);
-    /* display shall be set to flex dynamically */
-    display:none;
+   
+    display:flex;
 
     flex-direction: column;
     justify-content: space-evenly;
@@ -84,7 +84,11 @@ section{
     font-weight: 100;    
     letter-spacing: var(--page-heading-letter-spacing);
     position: relative;
-    display: none;
+    display: block;
+
+    font-size: var(--page-heading-font-size-final);
+    letter-spacing: var(--page-heading-letter-spacing-final);
+    left: 30vw;
 }
 
 /* STYLING THE FORM ----------------------------*/
@@ -210,58 +214,6 @@ form{
 }
 
 
-/* -----------ANIMATIONS-SEQUENCE-USING-jQuery---------------------------------------------------- */
-
-/* --------------FIRST COMES THE HEADING-------------- */
-.animate-heading{
-    animation: heading-animator 2s ease-in-out;
-}
-
-@keyframes heading-animator{
-    from{
-        letter-spacing: var(--page-heading-initial-spacing);
-        filter: opacity(0);
-    }
-    to{
-        letter-spacing: var(--page-heading-letter-spacing);
-        filter: opacity(1);
-    }
-}
-
-/* ------------------ANIMATING THE SECTION ---------------------------------------------- */
-
-.animate-section{
-    animation: section-animator 1.5s ease-in-out;
-}
-
-@keyframes section-animator{
-    from{
-        top: var(--section-inital-position);
-    }
-    
-    to{
-        top: var(--section-final-position);
-    }
-}
-
-/* -------------------AS THE SECTION ROLLS UP ,HEADING ANIMTES TO SHIFT AND SHRINK--------- */
-.animate-scale-and-shift{
-    animation: heading-shift-animator 1.5s ease-in-out;
-}
-
-@keyframes heading-shift-animator{
-    from{
-        font-size: var(--page-heading-font-size);
-        letter-spacing: var(--page-heading-letter-spacing);
-        left: 0;
-    }
-    
-    to{
-        font-size: var(--page-heading-font-size-final);
-        letter-spacing: var(--page-heading-letter-spacing-final);
-        left: 30vw;
-    }
-}
 
  /*----------------------- ANIMATING THE TASKS CONTAINER VIEW------------ */
 /* ------------this is for form-------- */
