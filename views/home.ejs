@@ -13,6 +13,7 @@
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
     <!-- adding font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
@@ -77,22 +78,29 @@
                     used to expand and contract container size -->
                     <i class="fas fa-expand-alt" id="expand-button"></i>
                     
-                    <li class="task">
+                    <% for(let i of tasksArray){ %>
+                    <li class="task" id="<%=i._id%>">
+
                         <input type="checkbox">
 
                         <div class="task-details">
                             <h2 class="description">
-
+                                <%= i.description %>
                             </h2>
                             <p class="date">
-
+                                <i class="fas fa-calendar-alt"></i>
+                                
+                                <%=i.date%>
                             </p>
                         </div>
 
-                        <div class="category">
-                            <h2></h2>
+                        <div class="category-displayer">
+                            <h2>
+                                <%= i.category %>
+                            </h2>
                         </div>
                     </li>
+                    <% } %>
                 
             </ul>
 

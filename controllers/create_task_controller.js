@@ -16,8 +16,8 @@ module.exports.add = function(req,res){
 
         //Task created
         console.log('****Task Created: ', newTask);
+
+        return res.redirect('/home_no_anim');
     })
-
-
-    return res.redirect('/home_no_anim');
+    
 }

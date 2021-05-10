@@ -10,10 +10,11 @@ module.exports.home = function(req,res){
             return;
         }
 
-        console.log('database is good');
-    })
-    
-    return res.render('home.ejs',{
-        title : 'TODO List APP'
+        console.log('data found from database !!');
+
+        return res.render('home.ejs',{
+            title : 'TODO List APP',
+            tasksArray: tasks
+        });
     });
 }
