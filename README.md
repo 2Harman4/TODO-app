@@ -6,5 +6,5 @@ The project I built here is a ‘TODO LIST’ displayed in screenshot  which hol
 Node.js and MongoDB
 
 ### USING
-npm start --- will start the server
+npm start --- will start the server   
 go to browser URL bar and type --- localhost:8000
